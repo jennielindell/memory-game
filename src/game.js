@@ -1,6 +1,5 @@
 import React from "react"
 import Card from "./card"
-import Counter from "./counter"
 import "./game.css";
 
 const photos = [
