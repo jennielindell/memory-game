@@ -1,6 +1,6 @@
 import React from "react"
 import Card from "./card"
-import "./game.css";
+import "./game.css"
 
 const photos = [
     "/images/kitten1.jpg",
@@ -27,15 +27,10 @@ class Game extends React.Component {
 
     render() {
         return (
-            <div>
-                <div className="gameIntro">
-                    <h1>Crazy cat lady</h1>
-                </div>
-                <div className="game">
-                    {this.state.cards.map((card) => (
-                        <Card src={card.src} />
-                    ))}
-                </div>
+            <div className="game">
+                {this.state.cards.map((card) => (
+                    <Card src={card.src} />
+                ))}
             </div>
         )
     }

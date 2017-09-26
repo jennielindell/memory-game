@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Game from "./game"
+import Layout from "./components/layout"
 
-ReactDOM.render(<Game />, document.getElementById('root'));
+ReactDOM.render(<Layout />, document.getElementById('root'));
