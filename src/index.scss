@@ -1,9 +1,11 @@
+@import "./shared.scss";
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   text-align: center;
-  background: #f1f1f1;
+  background: $primary;
   font-family: 'Roboto', sans-serif;
 }
 
