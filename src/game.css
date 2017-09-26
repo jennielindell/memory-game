@@ -1,0 +1,11 @@
+.game {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap; }
+
+.gameIntro {
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
