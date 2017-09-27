@@ -2,6 +2,7 @@ import React from "react"
 import Card from "./card"
 import "./game.css"
 import shuffle from "shuffle-array"
+import uuidv4 from "uuid/v4"
 
 const photos = [
     "/images/kitten1.jpg",
@@ -34,7 +35,8 @@ class Game extends React.Component {
         // Create an array
         return shuffledPhotos.map((url) => ({
             src: url,
-            isFlipped: false
+            isFlipped: false,
+            id: uuidv4()
         }))
     }
 
@@ -42,11 +44,18 @@ class Game extends React.Component {
 // <Card /> has the following props:
 // src; the url of the photo for the vard
 // whenClicked: a callback function which the card can evoke
+// key: Unique identifier for react to use when rendering from an array
+// id: Unique identifier we can use to refer to this card later
     render() {
         return (
             <div className="game">
                 {this.state.cards.map((card) => (
-                    <Card src={card.src} isFlipped={card.isFlipped} whenClick={this.handleCardClicked} />
+                    <Card
+                    key={card.id}
+                    id={card.id}
+                    src={card.src}
+                    isFlipped={card.isFlipped}
+                    whenClick={this.handleCardClicked} />
                 ))}
             </div>
         )

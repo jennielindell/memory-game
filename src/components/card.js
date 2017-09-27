@@ -8,7 +8,7 @@ class Card extends React.Component {
     // Because it's in this class, it has access to 'this', so it can use this.props
     handleClick = () => {
         //alert("I was clicked " + this.props.src)
-        this.props.whenClick(this.props.src)
+        this.props.whenClick(this.props.id)
     }
 
     // Props:
@@ -29,7 +29,7 @@ class Card extends React.Component {
         // on this.props, and onClick becomes { onClick: () => {} }
         return (
             <div className="card" onClick={this.handleClick}>
-                <img src={this.props.src} alt="" />
+                <img src={this.props.src} id={this.props.id} alt="" />
             </div>
         )
     }
