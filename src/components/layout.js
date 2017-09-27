@@ -1,4 +1,5 @@
 import React from "react";
+
 import Game from "./game";
 import Title from "./title";
 

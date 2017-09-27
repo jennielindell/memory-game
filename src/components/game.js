@@ -23,8 +23,10 @@ class Game extends React.Component {
         const duplicatedPhotos = photos.concat(photos)
         // Same result as above
         // const duplicatedPhotos = [...photos, ...photos]
+
         const shuffledPhotos = shuffle(duplicatedPhotos)
 
+        // Create an array
         return shuffledPhotos.map((url) => ({
             src: url,
             isFlipped: false
