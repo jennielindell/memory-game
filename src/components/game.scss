@@ -1,6 +1,13 @@
+@import "../shared.scss";
+
 .game {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    max-width: 70%;
+
+    @include max-width(640px) {
+        max-width: 100%;
+    }
 }
