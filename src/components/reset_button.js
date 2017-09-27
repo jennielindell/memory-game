@@ -8,7 +8,7 @@ class Card extends React.Component {
     // Because it's in this class, it has access to 'this', so it can use this.props
     handleClick = () => {
         //alert("I was clicked " + this.props.src)
-        this.props.whenClick(this.props.src)
+        this.props.onClick(this.props.src)
     }
 
     // Props:
@@ -24,7 +24,7 @@ class Card extends React.Component {
 
         // The render needs to return JSX.
         // JSX is basically HTML, but you can use components as well,
-        // for example when we render this card, we do so in the Game component by using <Card />
+        // for example when we render this card, we do so in the Game component by usin <Card />
         // Props become an object so, className="foo" becomes { className: "foo" }
         // on this.props, and onClick becomes { onClick: () => {} }
         return (

@@ -19,6 +19,11 @@ class Game extends React.Component {
         }
     }
 
+    // Function which will take one argument, a card src
+    handleCardClicked = (cardSrc) => {
+        console.log(cardSrc)
+    }
+
     setupGame = () => {
         const duplicatedPhotos = photos.concat(photos)
         // Same result as above
@@ -34,12 +39,14 @@ class Game extends React.Component {
     }
 
 
-
+// <Card /> has the following props:
+// src; the url of the photo for the vard
+// whenClicked: a callback function which the card can evoke
     render() {
         return (
             <div className="game">
                 {this.state.cards.map((card) => (
-                    <Card src={card.src} />
+                    <Card src={card.src} isFlipped={card.isFlipped} whenClick={this.handleCardClicked} />
                 ))}
             </div>
         )
