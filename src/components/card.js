@@ -11,6 +11,14 @@ class Card extends React.Component {
         this.props.whenClick(this.props.id)
     }
 
+    getClassName = () => {
+        if(this.props.isFlipped === true) {
+            return "card flipped"
+        } else {
+            return "card"
+        }
+    }
+
     // Props:
     // alt: ""
     // className: "card"
@@ -28,7 +36,7 @@ class Card extends React.Component {
         // Props become an object so, className="foo" becomes { className: "foo" }
         // on this.props, and onClick becomes { onClick: () => {} }
         return (
-            <div className="card" onClick={this.handleClick}>
+            <div className={this.getClassName()} onClick={this.handleClick}>
                 <img src={this.props.src} id={this.props.id} alt="" />
             </div>
         )

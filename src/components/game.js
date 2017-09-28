@@ -21,8 +21,8 @@ class Game extends React.Component {
     }
 
     // Function which will take one argument, a card src
-    handleCardClicked = (cardSrc) => {
-        console.log(cardSrc)
+    handleCardClicked = (cardId) => {
+        console.log(cardId)
     }
 
     setupGame = () => {
@@ -51,6 +51,7 @@ class Game extends React.Component {
             <div className="game">
                 {this.state.cards.map((card) => (
                     <Card
+                    className={this.getClassName}
                     key={card.id}
                     id={card.id}
                     src={card.src}
