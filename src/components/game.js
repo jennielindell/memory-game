@@ -58,14 +58,13 @@ class Game extends React.Component {
         })
 
         if (filteredCards.length === 2) {
-            console.log("hej")
-
-            this.state.cards.map((c) => {
-                return c.isFlipped = false
+            const newCardsState = this.state.cards.map((c) => {
+                c.isFlipped = false
+                return c
             })
-        }
 
-        //this.setState({ cards: flippedCards })
+            setTimeout(() => {this.setState({ cards: newCardsState })}, 1000)
+        }
     }
 
 
