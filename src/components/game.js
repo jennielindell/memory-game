@@ -48,9 +48,26 @@ class Game extends React.Component {
             }
             return a
         })
-        
-        this.setState({ cards: newCardState })
+
+        this.setState({ cards: newCardState }, this.checkIfCardsMatched)
     }
+
+    checkIfCardsMatched = (b) => {
+        const filteredCards = this.state.cards.filter((b) => {
+            return b.isFlipped
+        })
+
+        if (filteredCards.length === 2) {
+            console.log("hej")
+
+            this.state.cards.map((c) => {
+                return c.isFlipped = false
+            })
+        }
+
+        //this.setState({ cards: flippedCards })
+    }
+
 
 
 // <Card /> has the following props:

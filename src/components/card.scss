@@ -4,7 +4,6 @@
     display: flex;
     width: 10em;
     height: 10em;
-    background: #fff;
     padding: 0.5em;
     margin: 1em;
     box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.32);
@@ -16,6 +15,10 @@
     }
 
     &.flipped {
+        background: #fff;
+    }
+
+    &.unflipped {
         background-image: url("/images/kitten.svg");
         background-size: 100%;
 
