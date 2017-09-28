@@ -20,11 +20,6 @@ class Game extends React.Component {
         }
     }
 
-    // Function which will take one argument, a card src
-    handleCardClicked = (cardId) => {
-        console.log(cardId)
-    }
-
     setupGame = () => {
         const duplicatedPhotos = photos.concat(photos)
         // Same result as above
@@ -40,12 +35,30 @@ class Game extends React.Component {
         }))
     }
 
+    // This function will be called from the card component becase we have passed it as a prop
+    // (called whenClicked) when we render the card component.
+    //
+    // To generate the new state, we need to .map over the old state, and, if the card we're mapping
+    // over is the clicked card, we need to set it's "isFlipped" value to be "true". Otherwise we don't
+    // need to change the state for the card.
+    handleCardClicked = (clickedCardId) => {
+        const newCardState = this.state.cards.map((a) => {
+            if (a.id === clickedCardId) {
+                a.isFlipped = true
+            }
+            return a
+        })
+        
+        this.setState({ cards: newCardState })
+    }
+
 
 // <Card /> has the following props:
 // src; the url of the photo for the vard
 // whenClicked: a callback function which the card can evoke
 // key: Unique identifier for react to use when rendering from an array
 // id: Unique identifier we can use to refer to this card later
+// isFlipped: A boolean which will be toggle when the cards is flipped.
     render() {
         return (
             <div className="game">
