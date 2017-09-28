@@ -17,8 +17,6 @@
 
     &.flipped {
         background-image: url("/images/kitten.svg");
-        background-repeat: no-repeat;
-        background-position: center;
         background-size: 100%;
 
         img {
@@ -31,8 +29,4 @@
         height: 8em;
         margin: 0.5em;
     }
-}
-
-.card .flipped {
-
 }

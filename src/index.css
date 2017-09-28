@@ -4,15 +4,20 @@ body {
   font-family: sans-serif;
   text-align: center;
   background: #f2f2f2;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  color: #836bdd;
+  line-height: 1.5; }
 
 img {
   width: 100%; }
 
 h1 {
   font-size: 3em;
-  font-family: 'Acme', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  color: #836bdd;
+  letter-spacing: 0.5em; }
 
 .lead {
-  font-size: 1.2em;
-  line-height: 1.5; }
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  font-size: 0.7em; }
