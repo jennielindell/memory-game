@@ -20,11 +20,15 @@ h1 {
     font-size: 3em;
     font-family: 'Overpass Mono', monospace;
     color: $primary;
+
+    @include max-width(640px) {
+        font-size: 1.5em;
+    }
 }
 
 .lead {
     letter-spacing: 0.4em;
     text-transform: uppercase;
     font-size: 0.7em;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }

@@ -23,8 +23,8 @@ class Layout extends React.Component {
         return (
             <div className="layout">
                 <Title />
-                <Game onComplete={this.handleGameComplete} />
                 {!this.state.gameRunning && <Success />}
+                <Game onComplete={this.handleGameComplete} />
             </div>
         )
     }

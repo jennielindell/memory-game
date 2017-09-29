@@ -7,7 +7,7 @@ class Success extends React.Component {
     render() {
         return (
             <div className="success">
-                <p className="success_message">Aaaahhh!! Cuteness-overload!!</p>
+                <h1 className="success_message">Aaaahhh!! Cuteness-overload!!</h1>
             </div>
         )
     }

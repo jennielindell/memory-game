@@ -2,9 +2,20 @@
 
 .success {
     background: $primary;
-    color: #fff;
     width: 100%;
     height: 100%;
-    display: block;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
     z-index: 4;
+
+    &_message {
+        //padding-top: 4em;
+        color: #fff;
+        display: flex;
+        text-align: center;
+    }
 }
