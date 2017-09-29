@@ -19,12 +19,16 @@ class Layout extends React.Component {
         this.setState({ gameRunning: false })
     }
 
+    resetGame = () => {
+        this.setState({ gameRunning: true })
+    }
+
     render() {
         return (
             <div className="layout">
                 <Title />
-                {!this.state.gameRunning && <Success />}
-                <Game onComplete={this.handleGameComplete} />
+                {!this.state.gameRunning && <Success whenClicked={this.resetGame} />}
+                {this.state.gameRunning && <Game onComplete={this.handleGameComplete} />}
             </div>
         )
     }

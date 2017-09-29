@@ -1,17 +1,16 @@
 import React from "react"
 import Card from "./card"
-import Success from "./success"
 import "./game.css"
 import shuffle from "shuffle-array"
 import uuidv4 from "uuid/v4"
 
 const photos = [
     "/images/kitten1.jpg",
-    "/images/kitten2.jpg",
-    "/images/kitten3.jpg",
-    "/images/kitten4.jpg",
-    "/images/kitten5.jpg",
-    "/images/kitten6.jpg"
+    //"/images/kitten2.jpg",
+    //"/images/kitten3.jpg",
+    //"/images/kitten4.jpg",
+    //"/images/kitten5.jpg",
+    //"/images/kitten6.jpg"
 ]
 
 class Game extends React.Component {
@@ -95,6 +94,10 @@ class Game extends React.Component {
         if (matchedCards.length === this.state.cards.length) {
             this.props.onComplete()
         }
+    }
+
+    restartGame = () => {
+        this.props.setupGame()
     }
 
 
