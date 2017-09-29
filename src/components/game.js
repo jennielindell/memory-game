@@ -73,7 +73,7 @@ class Game extends React.Component {
                         return c
                     })
 
-                    this.setState({ cards: cardIsMatched })
+                    this.setState({ cards: cardIsMatched }, this.gameSuccess)
                 } else {
 
                     const newCardsState = this.state.cards.map((c) => {
@@ -93,10 +93,7 @@ class Game extends React.Component {
         })
         console.log(matchedCards.length, this.state.cards.length)
         if (matchedCards.length === this.state.cards.length) {
-            return true
-
-        } else {
-            return false
+            this.props.onComplete()
         }
     }
 
@@ -110,7 +107,6 @@ class Game extends React.Component {
     render() {
         return (
             <div className="game">
-            {this.gameSuccess() && <Success />}
                 {this.state.cards.map((card) => (
                     <Card
                     className={this.getClassName}

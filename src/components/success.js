@@ -1,11 +1,13 @@
-import React from "react" // We need React to use React
+import React from "react"
+
+import "./success.css"
 
 class Success extends React.Component {
 
     render() {
         return (
-            <div>
-                <p>Aaaahhh!! Cuteness-overload!!</p>
+            <div className="success">
+                <p className="success_message">Aaaahhh!! Cuteness-overload!!</p>
             </div>
         )
     }
