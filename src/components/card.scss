@@ -16,11 +16,19 @@
 
     &.flipped {
         background: #fff;
+//        backface-visibility: visible;
+
+        &.matched {
+            visibility: hidden;
+        }
     }
+
+
 
     &.unflipped {
         background-image: url("/images/kitten.svg");
         background-size: 100%;
+//        backface-visibility: hidden;
 
         img {
             visibility: hidden;

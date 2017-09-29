@@ -1,4 +1,5 @@
 @import "./shared.scss";
+@import url('https://fonts.googleapis.com/css?family=Overpass+Mono');
 
 body {
   margin: 0;
@@ -6,7 +7,7 @@ body {
   font-family: sans-serif;
   text-align: center;
   background: $background;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Overpass Mono', monospace;
   color: $primary;
   line-height: 1.5;
 }
@@ -17,13 +18,13 @@ img {
 
 h1 {
     font-size: 3em;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Overpass Mono', monospace;
     color: $primary;
-    letter-spacing: 0.5em;
 }
 
 .lead {
     letter-spacing: 0.4em;
     text-transform: uppercase;
     font-size: 0.7em;
+    margin-bottom: 1em;
 }

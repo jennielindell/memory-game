@@ -4,8 +4,8 @@ class Title extends React.Component {
     render() {
         return (
             <div>
-                <h1>C.O.M.G.</h1>
-                <p className="lead">(cuteness overload memory game)</p>
+                <h1>C. O. M. G.</h1>
+                <p className="lead">(Cuteness Overload Memory Game)</p>
             </div>
         )
     }

@@ -8,7 +8,9 @@ const photos = [
     "/images/kitten1.jpg",
     "/images/kitten2.jpg",
     "/images/kitten3.jpg",
-    "/images/kitten4.jpg"
+    "/images/kitten4.jpg",
+    "/images/kitten5.jpg",
+    "/images/kitten6.jpg"
 ]
 
 class Game extends React.Component {
@@ -31,6 +33,7 @@ class Game extends React.Component {
         return shuffledPhotos.map((url) => ({
             src: url,
             isFlipped: false,
+            isMatched: false,
             id: uuidv4()
         }))
     }
@@ -53,17 +56,32 @@ class Game extends React.Component {
     }
 
     checkIfCardsMatched = (b) => {
-        const filteredCards = this.state.cards.filter((b) => {
+        const flippedCards = this.state.cards.filter((b) => {
             return b.isFlipped
         })
 
-        if (filteredCards.length === 2) {
-            const newCardsState = this.state.cards.map((c) => {
-                c.isFlipped = false
-                return c
-            })
+        if (flippedCards.length === 2) {
+            setTimeout(() => {
 
-            setTimeout(() => {this.setState({ cards: newCardsState })}, 1000)
+                if (flippedCards[0].src === flippedCards[1].src) {
+                    const cardIsMatched = this.state.cards.map((c) => {
+                        flippedCards[0].isMatched = true
+                        flippedCards[1].isMatched = true
+                        c.isFlipped = false
+                        return c
+                    })
+
+                    this.setState({ cards: cardIsMatched })
+                } else {
+
+                    const newCardsState = this.state.cards.map((c) => {
+                        c.isFlipped = false
+                        return c
+                    })
+
+                    this.setState({ cards: newCardsState })
+                }
+            }, 1000)
         }
     }
 
@@ -85,6 +103,7 @@ class Game extends React.Component {
                     id={card.id}
                     src={card.src}
                     isFlipped={card.isFlipped}
+                    isMatched={card.isMatched}
                     whenClick={this.handleCardClicked} />
                 ))}
             </div>
