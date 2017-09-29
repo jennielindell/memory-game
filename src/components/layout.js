@@ -2,6 +2,7 @@ import React from "react";
 
 import Game from "./game";
 import Title from "./title";
+
 import "./layout.css"
 
 class Layout extends React.Component {

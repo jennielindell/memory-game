@@ -1,5 +1,6 @@
 import React from "react"
 import Card from "./card"
+import Success from "./success"
 import "./game.css"
 import shuffle from "shuffle-array"
 import uuidv4 from "uuid/v4"
@@ -64,9 +65,10 @@ class Game extends React.Component {
             setTimeout(() => {
 
                 if (flippedCards[0].src === flippedCards[1].src) {
+                    flippedCards[0].isMatched = true
+                    flippedCards[1].isMatched = true
+
                     const cardIsMatched = this.state.cards.map((c) => {
-                        flippedCards[0].isMatched = true
-                        flippedCards[1].isMatched = true
                         c.isFlipped = false
                         return c
                     })
@@ -85,6 +87,18 @@ class Game extends React.Component {
         }
     }
 
+    gameSuccess = () => {
+        const matchedCards = this.state.cards.filter((b) => {
+            return b.isMatched
+        })
+        console.log(matchedCards.length, this.state.cards.length)
+        if (matchedCards.length === this.state.cards.length) {
+            return true
+
+        } else {
+            return false
+        }
+    }
 
 
 // <Card /> has the following props:
@@ -96,6 +110,7 @@ class Game extends React.Component {
     render() {
         return (
             <div className="game">
+            {this.gameSuccess() && <Success />}
                 {this.state.cards.map((card) => (
                     <Card
                     className={this.getClassName}
